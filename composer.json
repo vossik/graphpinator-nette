@@ -1,7 +1,7 @@
 {
   "name": "infinityloop-dev/graphpinator-nette",
   "description": "Graphpinator adapters and addons for Nette framework.",
-  "homepage": "https://www.infinityloop.dev/",
+  "homepage": "https://github.com/graphpql",
   "type": "library",
   "license": ["MIT"],
   "authors": [
@@ -11,14 +11,15 @@
     }
   ],
   "require": {
-    "infinityloop-dev/graphpinator": "^1.1-rc2",
+    "infinityloop-dev/graphpinator": "^1.1",
     "infinityloop-dev/graphpinator-printer": "^1.0",
     "nette/application": "^3.0",
     "nette/http": "^3.0",
+    "nette/caching": "^3.0",
     "latte/latte": "^2.10.8 || ^3.0",
     "tracy/tracy": "^2.7",
     "psr/simple-cache": "3.0",
-    "guzzlehttp/psr7": "^1.8.4"
+    "guzzlehttp/psr7": "^2.4.3"
   },
   "require-dev": {
     "infinityloop-dev/graphpinator-upload": "^1.0",
@@ -26,7 +27,7 @@
     "phpunit/phpunit": "^9.3",
     "infection/infection": "^0.25",
     "infinityloop-dev/coding-standard": "^0.2",
-    "phpstan/phpstan": "^1.0"
+    "phpstan/phpstan": "^1.0 || ^2.0"
   },
   "scripts": {
     "phpunit": "phpunit tests",
@@ -34,8 +35,8 @@
       "Composer\\Config::disableProcessTimeout",
       "infection -j$(nproc)"
     ],
-    "phpstan": "phpstan analyze --level 2 src",
-    "phpstan-next": "phpstan analyze --level 3 src",
+    "phpstan": "phpstan analyze --level 5 src",
+    "phpstan-next": "phpstan analyze --level 6 src",
     "phpstan-max": "phpstan analyze --level max src",
     "codestyle": "phpcs --standard=vendor/infinityloop-dev/coding-standard/InfinityloopCodingStandard/ruleset.xml --extensions=php src tests",
     "codestyle-fix": "phpcbf --standard=vendor/infinityloop-dev/coding-standard/InfinityloopCodingStandard/ruleset.xml --extensions=php src tests"
